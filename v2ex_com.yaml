@@ -15,7 +15,7 @@ context: >
       tmp = {}
       print(topic.text, topic.get_attribute('href'))
       tmp['title'] = topic.text
-      tmp['url'] = topic.get_attribute('href')
+      #tmp['url'] = topic.get_attribute('href')
       reuslts.append(tmp)
     browser.quit()
     return json.dumps(reuslts)
