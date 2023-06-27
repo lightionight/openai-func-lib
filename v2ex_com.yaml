@@ -8,7 +8,7 @@ context: >
     from selenium.webdriver.common.by import By
     browser = webdriver.Chrome()
     browser.get('https://www.v2ex.com/')
-    topics = browser.find_elements(By.Xpath, '//a[@class="topic-link"]')
+    topics = browser.find_elements(By.XPATH, '//a[@class="topic-link"]')
     reuslts = []
     for topic in topics:
       tmp = {}
