@@ -8,14 +8,14 @@ context: >
     from selenium.webdriver.common.by import By
     import json
     browser = webdriver.Chrome()
-    browser.get('https://www.v2ex.com/')
+    browser.get('https://www.v2ex.com/?tab=hot')
     topics = browser.find_elements(By.XPATH, '//a[@class="topic-link"]')
     reuslts = []
     for topic in topics:
       tmp = {}
       print(topic.text, topic.get_attribute('href'))
       tmp['title'] = topic.text
-      #tmp['url'] = topic.get_attribute('href')
+      tmp['url'] = topic.get_attribute('href')
       reuslts.append(tmp)
     browser.quit()
     return json.dumps(reuslts)
