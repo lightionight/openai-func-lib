@@ -1,0 +1,11 @@
+name: GetUserIP
+context: >
+    def GetUserIP():
+        '''
+        获取用户ip
+        '''
+        import requests
+        import json
+        base_url = 'https://api.ipify.org?format=json'
+        return json.dumps(requests.get(base_url).json())
+deps: ["json", "requests"]

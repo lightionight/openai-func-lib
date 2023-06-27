@@ -1,0 +1,17 @@
+name: GetUserWeather
+context: >
+    def GetUserWeather(id):
+        '''
+        根据用户输入的id获取天气信息
+        :param id: 用户所在位置的id
+        '''
+        import json
+        import requests
+        base_url = 'https://devapi.qweather.com/v7/weather/now'
+        params = {
+            'location': id,
+            'key': '1f6b5731f6834c9a82c558b1ef520f98'
+        }
+        return json.dumps(requests.get(base_url, params=params).json())
+
+deps: ["json", "requests"]
