@@ -1,6 +1,6 @@
 name: GetUserWeather
 context: >
-    def GetUserWeather(id):
+    def GetUserWeather(id: str):
         '''
         根据用户输入的id获取天气信息
         :param id: 用户所在位置的id
