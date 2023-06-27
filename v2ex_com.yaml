@@ -8,8 +8,14 @@ context: >
     global browser
     browser.get('https://www.v2ex.com/')
     topics = browser.find_elements(By.Xpath, '//a[@class="topic-link"]')
+    reuslts = []
     for topic in topics:
+      tmp = {}
       print(topic.text, topic.get_attribute('href'))
+      tmp['title'] = topic.text
+      tmp['url'] = topic.get_attribute('href')
+      reuslts.append(tmp)
+    return json.dumps(reuslts)
     
 deps:
   - selenium
