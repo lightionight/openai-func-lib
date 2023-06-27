@@ -1,0 +1,14 @@
+name: v2ex_com
+context: >
+  def v2ex_com():
+    '''
+    获取V2EX网址内容,包括最新帖子, 最新新闻 每日最热帖子
+    '''
+    from selenium.webdriver.common.by import By
+    browser.get('https://www.v2ex.com/')
+    topics = browser.find_elements(By.Xpath, '//a[@class="topic-link"]')
+    for topic in topics:
+      print(topic.text, topic.get_attribute('href'))
+    
+deps:
+  - selenium

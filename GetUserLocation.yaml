@@ -1,18 +1,19 @@
 # this is function using for get user location
 name: GetUserLocation
 context: >
-    def GetUserLocation(location: str):
-        '''
-        根据用户输入的地址如上海,武汉 等获取城市id
-        :param location: 用户输入的地址
-        '''
-        import requests
-        base_url = 'https://geoapi.qweather.com/v2/city/lookup'
-        params = {
-            'location': location,
-            'key': '1f6b5731f6834c9a82c558b1ef520f98',
-            'range': 'cn'
-        }
-        return requests.get(base_url, params=params).json()['location'][0]['id']
+  def GetUserLocation(location: str):
+      '''
+      根据用户输入的地址如上海,武汉 等获取城市id
+      :param location: 用户输入的地址
+      '''
+      import requests
+      base_url = 'https://geoapi.qweather.com/v2/city/lookup'
+      params = {
+          'location': location,
+          'key': '1f6b5731f6834c9a82c558b1ef520f98',
+          'range': 'cn'
+      }
+      return requests.get(base_url, params=params).json()['location'][0]['id']
 
-deps: ["requests"]
+deps:
+  - requests
