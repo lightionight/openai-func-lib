@@ -6,6 +6,7 @@ context: >
     '''
     from selenium import webdriver
     from selenium.webdriver.common.by import By
+    import json
     browser = webdriver.Chrome()
     browser.get('https://www.v2ex.com/')
     topics = browser.find_elements(By.XPATH, '//a[@class="topic-link"]')
@@ -21,3 +22,4 @@ context: >
     
 deps:
   - selenium
+  - json
