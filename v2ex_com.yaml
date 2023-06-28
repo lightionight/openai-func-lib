@@ -6,8 +6,11 @@ context: >
     '''
     from selenium import webdriver
     from selenium.webdriver.common.by import By
+    from selenium.webdriver.chrome.options import Options as ChromeOptions
     import json
-    browser = webdriver.Chrome()
+    options = ChromeOptions()
+    options.add_argument("--headless=new")
+    browser = webdriver.Chrome(options=options)
     browser.get('https://www.v2ex.com/?tab=hot')
     topics = browser.find_elements(By.XPATH, '//a[@class="topic-link"]')
     reuslts = []
